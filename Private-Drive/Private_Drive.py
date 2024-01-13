@@ -33,7 +33,8 @@ def upload_to_google_drive(file_path):
     # Upload the file to Google Drive
     media = MediaFileUpload(file_path)
     file = drive_service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-    messagebox.showinfo('Private Drive','File Upload Successfully ', parent=root)
+
+    messagebox.showinfo('Private Drive','File upload successful', parent=root)
     print('File uploaded. File ID:', file.get('id'))
 
 def select_file_and_upload():
@@ -43,7 +44,7 @@ def select_file_and_upload():
 
 def callback():
     webbrowser.open_new(url)
-   
+
 
 # Tkinter window setup
 root = ctk.CTk()
