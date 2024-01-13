@@ -28,7 +28,7 @@ def upload_to_google_drive(file_path):
     drive_service = build('drive', 'v3', credentials=credentials)
 
     # Prepare file metadata
-    file_metadata = {'parents': ['1_Y4mZbK4DHHct9G3CatKsVL2IBD2Iepp']}
+    file_metadata = {'parents': ['1_Y4mZbK4DHHct9G3CatKsVL2IBD2Iepp'], 'name': file_path.split("/")[-1]}
 
     # Upload the file to Google Drive
     media = MediaFileUpload(file_path)
